@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<title>Hi {{user.username}}</title>
+{% for article in object_list %}
+
+    <div class="container mt-5">
+    <div class="card">
+    <div class="card-header">
+    <span class="font-weight-bold">{{ article.title }}</span>
+   
+    <div class="card-body text-justify">
+    {{ article.body }}
+    </div>
+    <div class="card-footer text-muted">
+        <span class="text-muted">By: {{ article.author }} |
+            {{ article.date }}</span>
+            </div>
+
+           
+                <a href="{%url 'update' article.id%}" class="btn btn-primary my-3" style="text-decoration: none;">Edit</a> 
+            <a href="{%url 'delete' article.id%}"  class="btn btn-danger" style="text-decoration: none;">Delete</a>
+          
+    
+    </div>
+    </div>
+</div>
+    <br />
+{% endfor %}
+
+{%endblock content%}

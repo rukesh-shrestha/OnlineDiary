@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% load crispy_forms_tags %}
+{%block content%}
+
+<title>Hi {{user.username}}</title>
+<div class="container my-5" style="height: 500px;">
+    <h4 class="text-center py-2">Add Diary</h4>
+<form method="POST">
+    
+
+    
+    {%csrf_token%}
+
+   
+
+    {{ form|crispy }}
+
+
+
+    <button class="btn btn-primary" type="submit" style="width: 100px;">Create</button>
+</form>
+
+
+
+
+</div>
+{%endblock content%}

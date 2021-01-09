@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title>
+        {{user.username}}
+    </title>
+    <div class="container my-3">
+    <div class="card">
+    <div class="card-header">
+    <span class="font-weight-bold">{{ dairy.title }}</span>
+   
+    <div class="card-body text-justify">
+    {{ dairy.body }}
+    </div>
+    <div class="card-footer text-muted">
+        <span class="text-muted">By: {{ dairy.author }} |
+            {{ dairy.date }}</span>
+            </div>
+
+           
+                <a href="{%url 'dairy'%}" class="btn btn-primary my-3" style="text-decoration: none;">Back</a> 
+            
+          
+    
+    </div>
+    </div>
+</div>
+    <br />
+
+{%endblock content%}
