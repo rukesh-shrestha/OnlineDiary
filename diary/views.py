@@ -14,13 +14,17 @@ class DairyPage(LoginRequiredMixin,ListView):
     model = Dairy
     login_url = 'login'
     template_name = 'dairy.html'
+    
 
 
     
     def get_queryset(self):
         queryset = super().get_queryset()
         queryset = queryset.filter(author=self.request.user)
-        return queryset
+        if len(queryset) != 0:
+            return queryset
+        else:
+            object_list = ['huhuh']
 
    
     
@@ -37,9 +41,10 @@ class DairyUpdate(SuccessMessageMixin,LoginRequiredMixin,UpdateView):
         if obj.author != self.request.user:
             raise PermissionDenied
         return super().dispatch(request,*args,**kwargs)
+        
 
     def get_success_message(self,cleaned_data):
-        return cleaned_data['title'] + ' Update successfully.'
+        return cleaned_data['title'] + 'Update successfully.'
 
 
 class DairyDelete(LoginRequiredMixin,DeleteView):
@@ -68,6 +73,7 @@ class DairyDetail(LoginRequiredMixin,DetailView):
         if obj.author != self.request.user:
             raise PermissionDenied
         return super().dispatch(request,*args,**kwargs)
+            
 
     
     

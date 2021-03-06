@@ -3,6 +3,14 @@
     .custom a{
         margin: 10px;
     }
+
+@media only screen and (max-width: 600px) {
+  .nav-item {
+    text-align: center !important;
+    margin: 1% !important;
+  }
+}
+
 </style>
 
 <meta charset="utf- ">
@@ -17,13 +25,13 @@
 
                 
                 <li class="nav-item px-1">
-                    <a href="{%url 'home'%}" class="btn btn-outline-secondary">Home</a>
+                    <a href="{%url 'home'%}" class="btn btn-outline-secondary" style="width: 100px;">Home</a>
                 </li>
                 <li class="nav-item px-1">
-                    <a href="{%url 'create'%}" class="btn btn-outline-secondary">+ Create</a>
+                    <a href="{%url 'create'%}" class="btn btn-outline-secondary" style="width: 100px;">+ Create</a>
                 </li>
                 <li class="nav-item px-1">          
-                    <a href="{%url 'dairy'%}" class="btn btn-outline-secondary">Diary</a>
+                    <a href="{%url 'dairy'%}" class="btn btn-outline-secondary" style="width: 100px;">Diary</a>
                 </li>  
                     
                 
@@ -48,10 +56,10 @@
            
                 <li class="nav-item px-1">
 
-                    <a href="{%url 'signup'%}" class="btn btn-outline-secondary">Sign Up</a>
+                    <a href="{%url 'signup'%}" class="btn btn-outline-secondary" style="width: 100px;">Sign Up</a>
                 </li>
                 <li class="nav-item px-1">
-                    <a href="{% url 'login' %}" class="btn btn-outline-secondary">Sign In</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-secondary" style="width: 100px;">Sign In</a>
                 </li>
                
 

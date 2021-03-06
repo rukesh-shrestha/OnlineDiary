@@ -3,30 +3,54 @@
 
 {% block content %}
 <title>Hi {{user.username}}</title>
-{% for article in object_list %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="container mt-5">
-    <div class="card">
-    <div class="card-header">
-    <span class="font-weight-bold">{{ article.title }}</span>
-   
-    <div class="card-body text-justify">
-    {{ article.body }}
+{%if object_list != None%}
+
+    {% for article in object_list %}
+    
+
+        <div class="container mt-5">
+        <div class="card">
+        <div class="card-header">
+        <span class="font-weight-bold">{{ article.title }}</span>
+    
+        <div class="card-body text-justify img-fluid img-responsive">
+        {{ article.body | safe }}
+        </div>
+        <div class="card-footer text-muted">
+            <span class="text-muted">{{ article.date }}</span>
+                </div>
+
+            
+                    <a href="{%url 'update' article.id%}" class="btn btn-primary my-3" style="text-decoration: none;">Edit</a> 
+                <a href="{%url 'delete' article.id%}"  class="btn btn-danger" style="text-decoration: none;">Delete</a>
+            
+        
+        </div>
+        </div>
     </div>
-    <div class="card-footer text-muted">
-        <span class="text-muted">By: {{ article.author }} |
-            {{ article.date }}</span>
+        <br />
+        
+    {% endfor %}
+
+
+{%else%}
+<div class="container">
+    <div class="shadow p-3 my-5 bg-light rounded text-center" style="padding: 15px;">
+
+      
+
+            <div class="text-center">
+                <h2 style="padding: 10px;">You haven't write any diary. Please write a diary from create option above.</h2>
             </div>
 
-           
-                <a href="{%url 'update' article.id%}" class="btn btn-primary my-3" style="text-decoration: none;">Edit</a> 
-            <a href="{%url 'delete' article.id%}"  class="btn btn-danger" style="text-decoration: none;">Delete</a>
-          
+    </div>
+
     
-    </div>
-    </div>
+
+
 </div>
-    <br />
-{% endfor %}
+{%endif%}
 
 {%endblock content%}

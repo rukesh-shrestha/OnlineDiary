@@ -13,20 +13,4 @@ class SignUpPage(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
    
-    # context_name_object = 'object'
-
-    # def register(self,request):
-    #     if request.method == "POST":
-    #         form_class = CustomUserCreationForm(request.POST)
-    #         email = request.POST.email
-    #         print(email)
-    #         if form_class.is_valid():
-    #             form_class.save()
-    #             return render(self.success_url)
-    #         else:
-    #             return render(request,'nav.html',{'form':form_class})
-
-
-
-# inn = SignUpPage
-# inn.register
+   

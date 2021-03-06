@@ -4,23 +4,26 @@
     <title>
         {{user.username}}
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="container my-3">
     <div class="card">
     <div class="card-header">
+
+  
     <span class="font-weight-bold">{{ dairy.title }}</span>
    
     <div class="card-body text-justify">
-    {{ dairy.body }}
+    {{ dairy.body|safe }}
     </div>
     <div class="card-footer text-muted">
-        <span class="text-muted">By: {{ dairy.author }} |
-            {{ dairy.date }}</span>
+        <span class="text-muted">{{ dairy.date }}</span>
             </div>
-
+           
            
                 <a href="{%url 'dairy'%}" class="btn btn-primary my-3" style="text-decoration: none;">Back</a> 
             
           
+  
     
     </div>
     </div>

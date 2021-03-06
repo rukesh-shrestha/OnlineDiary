@@ -1,10 +1,22 @@
 {%extends 'base.html'%}
+{%load static%}
 {% load crispy_forms_tags %}
 {%block content%}
 
-<title>Hi {{user.username}}</title>
-<div class="container my-5" style="height: 500px;">
-    <h4 class="text-center py-2">Add Diary</h4>
+
+
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>Hi. {{user.username}}</title>
+
+<div class="card  my-3 custom col-md-8 offset-md-2 p-0">
+    <div class="card-header text-center m-0">Create Diary</div>
+
+<div class="container rounded py-3">
+    
 <form method="POST">
     
 
@@ -12,8 +24,17 @@
     {%csrf_token%}
 
    
+  
+   
+                 {{ form |crispy }}
+     
+      
+                {{ form.media}}
+        
+       
+       
+    
 
-    {{ form|crispy }}
 
 
 
@@ -24,4 +45,8 @@
 
 
 </div>
+
+
+</div>
+</body>
 {%endblock content%}

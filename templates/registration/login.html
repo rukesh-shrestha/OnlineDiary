@@ -5,19 +5,34 @@
 <style>
 .errorlist{
     font-family:Georgia, 'Times New Roman', Times, serif;
+  
+    list-style: none !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .custom{
+          font-size: 10px !important;
+        }
+
+    h3{
+        font-size: small !important;
+    }
 }
 </style>
 
 {%block content%}
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body class="bg-light">
-<div class="container  py-2 my-5 shadow-lg p-3 mb-5 bg-white rounded" style="width: 700px; height: 600px;">
+<body class="bg-white">
+<div class="container  py-2 my-5 shadow-lg  mb-5 bg-white rounded w-50" style="border-radius: 10px;">
 
     
-<div class="container my-5" style="width: 500px;">
-    <h3 class="text-center py-3">User Login</h3>
+<div class="container my-5 shadow">
+    <h3 class="text-center py-3 custom">User Login</h3>
     
-    <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+    <div class="login100">
         <form class="login100-form validate-form flex-sb flex-w" method="POST">
             {%csrf_token%}
             
